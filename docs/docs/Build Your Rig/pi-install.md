@@ -1,6 +1,6 @@
 # Setting up a Raspberry Pi rig
 
-Note: there are two key ways to setup a Pi rig. One uses Pi Bakery, the other is a manual method. If your Pi Bakery process does not work, just use [Option B](#Option-B). 
+Note: there are two key ways to setup a Pi rig. One is largely automated and uses Pi Bakery, the other is a manual method. If the Pi Bakery process does not work, just use [Option B](#Option-B). 
 
 ## Option A - Use Pi Bakery
 
@@ -81,29 +81,13 @@ Troubleshooting:  If your screen stops as shown below or jumps ahead to the inte
 
 !["install piBakery"](../Images/build-your-rig/pi-curl-fail.png)
 
-**************************
-### Switch to dev branch for your pi HAT ###
-If you are here - you should be building a rig with a Pi HAT(recommended) or RFM69HCW (experimental).  Instead of proceeding with the setup script, press `control-c` to cancel the setup script.
-
-Reboot your rig by entering `reboot`.  This will end your ssh session.  Give your rig time to reboot, reconnect to wifi, and then login to the rig again.  This time the rig will be using the rig name you chose before in the setup so use `ssh root@yourrigname.local` on a Mac.  On a Windows PC with PuTTY, the hostname can be either `yourrigname` or `yourrigname.local`, and the username will be `root`.
-
-Now we will select a Raspian-compatible updated branch by using `cd ~/src/oref0 && git checkout dev`. On your first install you should see a message returned of "Branch dev set up to track remote branch dev from origin. Switched to a new branch 'dev'". On subsequent installs or updates you would follow the direction to execute the command "git pull".
-
 ### Finish installation ###
-
-First, update npm to the latest version. Run `npm install npm@latest -g`. 
-
-Next, change to the oref0 directory if you are not in it already. Run `cd ~/src/oref0`. 
-
-Now run `npm run global-install`.  After about 10-15 minutes, the installations will end and you will be dropped off at the `root@yourrigname:~/src/oref0#` prompt.  Successful completion of this step should look like below.
-
-!["install piBakery"](../Images/build-your-rig/pi-install-success.png)
 
 Now you can run the interactive oref0 setup script:
 
 `cd && ~/src/oref0/bin/oref0-setup.sh`
 
-Answer all the setup questions.  A successful setup script will finish asking you if you want to setup cron.  Say yes to those two questions.  Finally, you'll see a message about Reboot required.  Go ahead and reboot the rig.  You've finished the loop installation. Login to the rig again. 
+Answer all the setup questions.  A successful setup script will finish asking you if you want to setup cron.  Say yes to those two questions.  Finally, you'll see a message about Reboot required.  Go ahead and reboot the rig.  You've finished the loop installation! Login to the rig again. 
 !["install piBakery"](../Images/build-your-rig/pi-loop-install.png)
 
 **Troubleshooting**: If your rig gets stuck at the point shown below, simply login to the rig again and run the setup script one more time.  Usually, running the setup script a second time will clear that glitch.
@@ -192,6 +176,4 @@ The script will then continue to run awhile longer (~10+ minutes) before asking 
 
 Return to the [OpenAPS Install page](http://openaps.readthedocs.io/en/latest/docs/Build%20Your%20Rig/OpenAPS-install.html#step-4-setup-script) to complete oref0-setup. 
 
-**If you are installing to a Pi with a legacy radio (Ti-stick, SliceOfRadio, etc.) - Press enter. [Jump to finishing the installation](#finish-installation)**
-
-**If you are installing to a newer Pi with a HAT as radio: Do not press enter!  [Continue on to Pi-Hat instructions.](#switch-to-dev-branch-for-your-pi-hat).**
+**Press enter. [Jump to finishing the installation](#finish-installation)**
