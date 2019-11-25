@@ -100,7 +100,7 @@ root@edisonhost:~# bluetoothd --version
 
 ### Bluetooth setup
 
-1) First, check that your wpa_supplicant.conf file doesn't contain any content that will interfere with oref0-online.
+1. First, check that your wpa_supplicant.conf file doesn't contain any content that will interfere with oref0-online.
 
    a) Open the wpa_supplicant.conf file to make sure it is set up to allow oref0-online to change between connections.
 
@@ -110,12 +110,12 @@ root@edisonhost:~# bluetoothd --version
 
       ![Remove update_config](../Images/update_config_adjustment.png)
 
-2) Next, stop cron to make sure oref0-online doesn't interfere:
+2. Next, stop cron to make sure oref0-online doesn't interfere:
 
    `sudo service cron stop`
 
 <details>
-    <summary>3) If you are using Jubilinux 0.3.0 (Debian Stretch) or the Raspberry Pi, please skip to #4. <b>If you are using Jubilinux 0.2.0 (Debian Jessie), you will need to manually initialize bluetooth. (click here to expand instructions)</b></summary>
+    <summary>3. If you are using Jubilinux 0.3.0 (Debian Stretch) or the Raspberry Pi, please skip to #4. <b>If you are using Jubilinux 0.2.0 (Debian Jessie), you will need to manually initialize bluetooth. (click here to expand instructions)</b></summary>
 <br>
 
    a) Restart the Bluetooth daemon to start up the bluetooth services.  (This is normally done automatically by oref0-online once everything is set up, but we want to do things manually this first time):
@@ -136,7 +136,7 @@ As shown in the "success" section below, you should see a single line returned w
 
 </details>
 
-4) Now launch the Bluetooth control program: `bluetoothctl` and type each of the following:
+4. Now launch the Bluetooth control program: `bluetoothctl` and type each of the following:
 
 ```
 power off
@@ -249,8 +249,8 @@ Another app which others have found to work better (depending on phone and carri
 
 If you are able to set up a tethering connection (and even obtain a local IP) but your rig is unable to access the internet through your device's mobile connection, the following steps may be helpful:
 
-1) If you're using an Android phone, see if your rig can access the internet when your phone is logged into a wifi network. If it can, the issue may be with your carrier.
+1. If you're using an Android phone, see if your rig can access the internet when your phone is logged into a wifi network. If it can, the issue may be with your carrier.
 
-2) Try setting up a tethering connection between your phone and another device (e.g., your laptop) to see if the laptop is able to share the phone's mobile connection. On at least one carrier (Ting), setting up a connection from a PC resulted in a prompt on the phone to activate sharing the phone's mobile connection via Bluetooth, which then resolved the issue.
+2. Try setting up a tethering connection between your phone and another device (e.g., your laptop) to see if the laptop is able to share the phone's mobile connection. On at least one carrier (Ting), setting up a connection from a PC resulted in a prompt on the phone to activate sharing the phone's mobile connection via Bluetooth, which then resolved the issue.
 
-3) If all else fails and you have isolated the problem to your mobile connection, consider contacting your mobile carrier's tech support for help as they may be able to do something on their end.
+3. If all else fails and you have isolated the problem to your mobile connection, consider contacting your mobile carrier's tech support for help as they may be able to do something on their end.
